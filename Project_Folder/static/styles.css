@@ -1,0 +1,341 @@
+/* static/styles.css */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('Screenshot 2025-02-22 170314.jpg'); /* Add your image here */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Fix the background image */
+    background-blend-mode: overlay;
+    background-color: rgba(255, 255, 255, 0.7); /* Light overlay for better readability */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-container h1 {
+    color: #2c3e50;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.login-box {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-box h2 {
+    color: #007bff;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 600;
+    color: #333;
+    text-align: left;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 25px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+
+
+
+/* Seat Grid */
+.seat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    margin: 20px;
+    width: 90%;
+    max-width: 1200px;
+}
+
+.seat {
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.seat:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0,0.340);
+}
+
+.available {
+    background-color: #28a745;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.190);
+    
+
+}
+
+.reserved {
+    background-color: #ffc107;
+    color: black;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.190);
+}
+
+.occupied {
+    background-color: #ef3043;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.190);
+}
+
+button[onclick*="logout"] {
+    background-color: rgb(38, 0, 255);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.292);
+}
+/* Add this at the end of styles.css */
+button[onclick*="library"], button[onclick*="computer_lab"] {
+    background-color:rgb(38, 0, 255);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.292);
+}
+button:hover[onclick*="logout"] {
+    background-color: red;
+    transition: background-color 0.5s ease; /* Slow transition to red */
+}
+/* Add this at the end of styles.css */
+button:hover[onclick*="library"], button:hover[onclick*="computer_lab"] {
+    background-color: #28a745;
+    transition: background-color 0.5s ease; /* Slow transition to green */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .login-container {
+        padding: 20px;
+    }
+
+    .login-container h1 {
+        font-size: 2rem;
+    }
+
+    .login-box h2 {
+        font-size: 1.5rem;
+    }
+
+    input {
+        padding: 10px;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .seat-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+}
+/* Box around the welcome message */
+.welcome-box {
+    background: rgba(255, 255, 255, 0.5);
+    padding: 50px;
+    border-radius: 10px;
+    
+    box-shadow: 0 4px 10px rgba(0, 0, 0,0.340);
+    text-align: center;
+    margin-bottom: 20px;
+    width: 80%;
+    max-width: 500px;
+}
+.h {
+    background: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0,0.340);
+    text-align: center;
+    font-size: 23px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 80%;
+    max-width: 500px;
+}
+/* Box around the three options */
+.options-container {
+    background: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0,0.340);
+    text-align: center;
+    width: 80%;
+    max-width: 500px;
+}
+
+/* Space between buttons */
+.options-container button {
+    margin: 10px 0;
+    width: 100%;
+}
+
+
+@keyframes pop {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Apply the animation to the seat containers in the availability page */
+.availability .seat {
+    animation: pop 0.8s ease-out forwards;
+    opacity: 0; /* Start with opacity 0 to make the fade-in effect smoother */
+}
+/* Style for the Reserve button */
+/* Style for the Reserve button */
+/* Style for the Reserve button */
+button[onclick*="reserve"] {
+    background-color: #297e48; /* Initial Green Color */
+    color: white;
+    font-weight: bold;
+    background: linear-gradient(90deg, #08701f 50%, rgba(255, 255, 255, 0.3) 50%);
+    background-size: 200% 100%;
+    background-position: 0% 0; /* Start from the left */
+    transition: background-position 0.4s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* Hover effect - Move shading from left to right */
+button:hover[onclick*="reserve"] {
+    background-position: 100% 0; /* Move to the right */
+}
+button[onclick*="occupy"] {
+    background-color: #1d50b7; /* Initial Green Color */
+    color: white;
+    font-weight: bold;
+    background: linear-gradient(90deg,#c59609 50%, rgba(255, 255, 255, 0.3) 50%);
+    background-size: 200% 100%;
+    background-position: 0% 0; /* Start from the left */
+    transition: background-position 0.4s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* Hover effect - Move shading from left to right */
+button:hover[onclick*="occupy"] {
+    background-position: 100% 0; /* Move to the right */
+}
+
+
+
+button[onclick*="cancel"] {
+    background-color: #1d50b7; /* Initial Green Color */
+    color: white;
+    font-weight: bold;
+    background: linear-gradient(90deg,#aa1a28 50%, rgba(255, 255, 255, 0.3) 50%);
+    background-size: 200% 100%;
+    background-position: 0% 0; /* Start from the left */
+    transition: background-position 0.4s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* Hover effect - Move shading from left to right */
+button:hover[onclick*="cancel"] {
+    background-position: 100% 0; /* Move to the right */
+}
+/* User Dashboard Styles */
+
+
+
+/* Add this at the end of styles.css */
+.user-dashboard {
+    background-color:#2600ff; /* Blue color for the User Dashboard button */
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0,0.340);
+}
+
+.user-dashboard:hover {
+    background-color: #28a745; /* Green color on hover */
+    transition: background-color 0.5s ease; /* Smooth transition */
+    
+}
+
+.user-dashboard .seat-grid {
+    margin-top: 20px;
+}
+
+.user-dashboard .seat-grid p {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #333;
+}
