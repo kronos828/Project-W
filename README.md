@@ -1,2 +1,2 @@
 # Project-W
- "Library and Computer Lab Seat Management ."
+ "Real-Time Library & Computer Lab Seat Management System ."
