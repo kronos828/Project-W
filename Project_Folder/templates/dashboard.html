@@ -1,0 +1,22 @@
+<!-- templates/dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FWB</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='logo.png') }}">
+</head>
+<body>
+    <div class="welcome-box">
+        <h2 class="header">WELCOME, {{ session['student_id'] }}</h2>
+    </div>
+    <div class="options-container">
+        <button class="lib" onclick="location.href='/library'">Library</button>
+        <button class="cc" onclick="location.href='/computer_lab'">Computer Lab</button>
+        <button class="user-dashboard" onclick="location.href='/user_dashboard'">User Dashboard</button>
+        <button class="logout-button" onclick="location.href='/logout'">Logout</button>
+    </div>
+</body>
+</html>
